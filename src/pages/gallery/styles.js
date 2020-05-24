@@ -18,6 +18,10 @@ export default {
     width: '100%',
   },
 
+  album: {
+    height: 140,
+  },
+
   title: {
     flex: 1,
   },

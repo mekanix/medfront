@@ -6,7 +6,7 @@ import { withStore, EmptyTemplate } from 'freenit'
 // Components
 import {
   AppBar,
-  Button,
+  // Button,
   Drawer,
   IconButton,
   ListItemIcon,
@@ -148,12 +148,11 @@ class Template extends React.Component {
                 Gospodarstvo Grbić
               </Link>
             </Typography>
+            {/*
             <Link to="/gallery">
               <Button color="inherit">Galerija</Button>
             </Link>
-            <Link to="/about">
-              <Button color="inherit">O Nama</Button>
-            </Link>
+            */}
             {BarLinks}
           </Toolbar>
         </AppBar>
@@ -198,4 +197,3 @@ Template.propTypes = {
 
 
 export default withRouter(withStore(Template))
-

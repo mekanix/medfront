@@ -88,4 +88,27 @@ export default {
       marginBottom: 50,
     },
   },
+
+  about: {
+    padding: 20,
+    backgroundColor: '#f8f8f8',
+    title: {
+      fontSize: 48,
+      textAlign: 'center',
+      marginBottom: 20,
+    },
+    info: {
+      display: 'grid',
+      gridTemplateColumns: '120px auto',
+      gridColumnGap: 10,
+      gridRowGap: 10,
+      marginBottom: 20,
+    },
+  },
+
+  footer: {
+    color: '#aaa',
+    padding: 10,
+    textAlign: 'center',
+  },
 }

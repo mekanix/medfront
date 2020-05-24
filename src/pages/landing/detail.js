@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  Paper,
   Card,
   CardHeader,
   CardMedia,
+  Paper,
 } from '@material-ui/core'
 import Template from 'templates/default/detail'
 import styles from './styles'
@@ -73,14 +73,32 @@ class Page extends React.Component {
             </a>
           </div>
         </div>
-        <div style={styles.info}>
-          <div style={styles.info.title} id="narucivanje">
+        <div style={styles.about}>
+          <div style={styles.about.title} id="narucivanje">
             Naručivanje
           </div>
-          <p>
-            Poručivanje putem telefona
-          </p>
+          <div style={styles.about.info}>
+            <div>
+              Adresa
+            </div>
+            <div>
+              Trg Republike Hrvatske 3/21, Vukovar
+            </div>
+            <div>
+              Telefon
+            </div>
+            <div>
+              098270803
+            </div>
+            <div />
+            <div>
+              098346178
+            </div>
+          </div>
         </div>
+        <Paper style={styles.footer}>
+          Registrovano 2005
+        </Paper>
       </Template>
     )
   }
