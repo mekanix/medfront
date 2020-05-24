@@ -6,6 +6,7 @@ import { withStore, EmptyTemplate } from 'freenit'
 // Components
 import {
   AppBar,
+  Button,
   Drawer,
   IconButton,
   ListItemIcon,
@@ -139,14 +140,20 @@ class Template extends React.Component {
       <div>
         <AppBar position="static">
           <Toolbar>
+            <IconButton color="inherit" onClick={this.handleMenuOpen}>
+              <MenuIcon />
+            </IconButton>
             <Typography variant="h5" color="inherit" style={styles.flex}>
-              <IconButton color="inherit" onClick={this.handleMenuOpen}>
-                <MenuIcon />
-              </IconButton>
               <Link to="/" data-id="app">
-                Freenit
+                Gospodarstvo Grbić
               </Link>
             </Typography>
+            <Link to="/gallery">
+              <Button color="inherit">Galerija</Button>
+            </Link>
+            <Link to="/about">
+              <Button color="inherit">O Nama</Button>
+            </Link>
             {BarLinks}
           </Toolbar>
         </AppBar>
