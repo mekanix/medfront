@@ -1,9 +1,14 @@
+const center = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
+
 export default {
   root: {
+    ...center,
     minHeight: 'calc(100vh - 40px - 60px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'column',
     padding: 20,
     backgroundImage: 'url("https://as2.ftcdn.net/jpg/01/40/91/57/500_F_140915723_DPQA5uFOB4K23w0ljgcE8P0e4jSVIt1M.jpg")',
@@ -28,11 +33,9 @@ export default {
   },
 
   order: {
+    ...center,
     height: 60,
     width: 150,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     textTransform: 'uppercase',
     fontSize: 24,
     fontWeight: 'bold',
@@ -43,7 +46,6 @@ export default {
   section: {
     padding: 20,
     paddingTop: 70,
-    minHeight: 'calc(100vh - 90px)',
   },
 
   products: {
@@ -75,9 +77,7 @@ export default {
   },
 
   center: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...center,
   },
 
   info: {
@@ -92,6 +92,9 @@ export default {
   about: {
     padding: 20,
     backgroundColor: '#f8f8f8',
+    content: {
+      ...center,
+    },
     title: {
       fontSize: 48,
       textAlign: 'center',
@@ -99,10 +102,22 @@ export default {
     },
     info: {
       display: 'grid',
-      gridTemplateColumns: '120px auto',
+      gridTemplateColumns: 'auto 350px',
       gridColumnGap: 10,
       gridRowGap: 10,
       marginBottom: 20,
+      width: '50%',
+      marginRight: 20,
+      marginLeft: 20,
+    },
+    map: {
+      width: '50%',
+      height: 400,
+      padding: 10,
+    },
+    right: {
+      textAlign: 'right',
+      marginRight: 50,
     },
   },
 
@@ -110,5 +125,23 @@ export default {
     color: '#aaa',
     padding: 10,
     textAlign: 'center',
+  },
+
+  boro: {
+    marginBottom: 20,
+    title: {
+      textAlign: 'center',
+      fontSize: 48,
+      marginBottom: 20,
+    },
+    content: {
+      ...center,
+      padding: 20,
+    },
+    avatar: {
+      height: 400,
+      width: 400,
+      marginRight: 50,
+    },
   },
 }
