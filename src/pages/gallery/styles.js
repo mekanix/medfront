@@ -4,6 +4,14 @@ export default {
     flexGrow: 1,
   },
 
+  content: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, auto)",
+    columnGap: 10,
+    rowGap: 10,
+    marginTop: 20,
+  },
+
   header: {
     display: 'flex',
     alignItems: 'center',
@@ -20,6 +28,8 @@ export default {
 
   album: {
     height: 140,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
   },
 
   title: {
