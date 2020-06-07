@@ -106,16 +106,26 @@ export default (resolution) => {
       },
       info: {
         display: 'grid',
-        gridTemplateColumns: 'auto 350px',
+        gridTemplateColumns: resolution.width < 900
+          ? 'auto auto'
+          : 'auto 350px',
         gridColumnGap: 10,
         gridRowGap: 10,
         marginBottom: 20,
-        width: '50%',
-        marginRight: 20,
-        marginLeft: 20,
+        width: resolution.width < 900
+          ? '100%'
+          : '50%',
+        marginRight: resolution.width < 900
+          ? 0
+          : 20,
+        marginLeft: resolution.width < 900
+          ? 0
+          : 20,
       },
       map: {
-        width: '50%',
+        width: resolution.width < 900
+          ? '100%'
+          : '50%',
         height: 400,
         padding: 10,
       },
