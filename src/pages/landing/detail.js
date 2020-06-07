@@ -6,12 +6,17 @@ import {
   CardMedia,
   Paper,
 } from '@material-ui/core'
+import {
+  withStore,
+} from 'freenit'
 import Template from 'templates/default/detail'
-import styles from './styles'
+import getStyles from './styles'
 
 
 class Landing extends React.Component {
   render() {
+    const { resolution } = this.props.store
+    const styles = getStyles(resolution.detail)
     return (
       <Template style={{}}>
         <div style={styles.root}>
@@ -129,10 +134,10 @@ class Landing extends React.Component {
                 title="map"
                 width="100%"
                 height="100%"
-                frameborder="0"
+                frameBorder="0"
                 scrolling="no"
-                marginheight="0"
-                marginwidth="0"
+                marginHeight="0"
+                marginWidth="0"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=18.999052047729496%2C45.34991911662757%2C19.00665879249573%2C45.352316772920815&amp;layer=mapnik&amp;marker=45.35111795747069%2C19.00285542011261"
               >
               </iframe>
@@ -158,4 +163,4 @@ class Landing extends React.Component {
 }
 
 
-export default Landing
+export default withStore(Landing)

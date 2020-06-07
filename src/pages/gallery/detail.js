@@ -10,7 +10,7 @@ import styles from './styles'
 import Template from 'templates/default/detail'
 
 
-const steps = [
+const images = [
   { imgPath: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60' },
   { imgPath: 'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60' },
   { imgPath: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80' },
@@ -46,7 +46,7 @@ class GalleryDetail extends React.Component {
             onChangeIndex={this.handleStep}
             enableMouseEvents
           >
-            {steps.map((image, index) => (
+            {images.map((image, index) => (
               <div key={index}>
                 {Math.abs(step - index) <= 2 ? (
                   <img style={styles.img} src={image.imgPath} alt={image.label} />
@@ -55,12 +55,12 @@ class GalleryDetail extends React.Component {
             ))}
           </SwipeableViews>
           <MobileStepper
-            steps={steps.length}
+            steps={images.length}
             position="static"
             variant="text"
             activeStep={step}
             nextButton={
-              <Button size="small" onClick={this.handleNext} disabled={step === steps.length - 1}>
+              <Button size="small" onClick={this.handleNext} disabled={step === images.length - 1}>
                 Next
                 <KeyboardArrowRight />
               </Button>
