@@ -63,7 +63,8 @@ class GalleryList extends React.Component {
   }
 
   render() {
-    const albumsView = this.props.store.gallery.list.data.map(album => (
+    const { auth, gallery } = this.props.store
+    const albumsView = gallery.list.data.map(album => (
       <Link to={`/gallery/${album.name}`} key={album.name}>
         <Card raised>
           <CardActionArea>
@@ -80,6 +81,12 @@ class GalleryList extends React.Component {
         </Card>
       </Link>
     ))
+    const createAlbum = auth.detail.ok
+      ? (
+        <Fab color="primary" onClick={this.showCreateAlbum}>
+          <AddIcon />
+        </Fab>
+      ) : null
     return (
       <Template>
         <Dialog onClose={this.closeCreateAlbum} open={this.state.show}>
@@ -108,9 +115,7 @@ class GalleryList extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-        <Fab color="primary" onClick={this.showCreateAlbum}>
-          <AddIcon />
-        </Fab>
+        {createAlbum}
         <div style={styles.content}>
           {albumsView}
         </div>
