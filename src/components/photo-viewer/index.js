@@ -2,8 +2,6 @@ import React from 'react'
 import {
   Button,
   Dialog,
-  DialogActions,
-  DialogContent,
   MobileStepper,
 } from '@material-ui/core'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
