@@ -1,13 +1,7 @@
 import React from 'react'
-import {
-  Button,
-  MobileStepper,
-} from '@material-ui/core'
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
-import SwipeableViews from 'react-swipeable-views'
-import styles from './styles'
 import Template from 'templates/default/detail'
+
+import PhotoViewer from 'components/photo-viewer'
 
 
 const images = [
@@ -21,58 +15,25 @@ const images = [
 
 class GalleryDetail extends React.Component {
   state = {
-    step: 0,
+    view: true,
   }
 
-  handleNext = () => {
-    this.setState({ step: this.state.step + 1 })
+  openViewer = () => {
+    this.setState({ view: true })
   }
 
-  handleBack = () => {
-    this.setState({ step: this.state.step - 1 })
-  }
-
-  handleStep = (step) => {
-    this.setState({ step })
+  closeViewer = () => {
+    this.setState({ view: false })
   }
 
   render() {
-    const { step } = this.state
     return (
       <Template>
-        <div style={styles.root}>
-          <SwipeableViews
-            index={step}
-            onChangeIndex={this.handleStep}
-            enableMouseEvents
-          >
-            {images.map((image, index) => (
-              <div key={index}>
-                {Math.abs(step - index) <= 2 ? (
-                  <img style={styles.img} src={image.imgPath} alt={image.label} />
-                ) : null}
-              </div>
-            ))}
-          </SwipeableViews>
-          <MobileStepper
-            steps={images.length}
-            position="static"
-            variant="text"
-            activeStep={step}
-            nextButton={
-              <Button size="small" onClick={this.handleNext} disabled={step === images.length - 1}>
-                Next
-                <KeyboardArrowRight />
-              </Button>
-            }
-            backButton={
-              <Button size="small" onClick={this.handleBack} disabled={step === 0}>
-                <KeyboardArrowLeft />
-                Back
-              </Button>
-            }
-          />
-        </div>
+        <PhotoViewer
+          images={images}
+          open={this.state.view}
+          onClose={this.closeViewer}
+        />
       </Template>
     )
   }
