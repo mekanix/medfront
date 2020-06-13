@@ -35,4 +35,21 @@ export default {
   title: {
     flex: 1,
   },
+
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, auto)',
+    gridGap: 10,
+  },
+
+  image: {
+    height: 200,
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+  },
+
+  add: {
+    marginBottom: 20,
+  },
 }

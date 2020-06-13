@@ -58,4 +58,8 @@ export default class GalleryStore {
       }
     }
   }
+
+  step = (newStep) => {
+    this.setDetail({ ...this.detail, step: newStep })
+  }
 }

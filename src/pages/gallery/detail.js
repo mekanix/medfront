@@ -1,7 +1,14 @@
 import React from 'react'
-import Template from 'templates/default/detail'
+import {
+  Fab,
+} from '@material-ui/core'
+import { withStore } from 'freenit'
+import AddIcon from '@material-ui/icons/Add'
 
+import Template from 'templates/default/detail'
 import PhotoViewer from 'components/photo-viewer'
+
+import styles from './styles'
 
 
 const images = [
@@ -15,10 +22,12 @@ const images = [
 
 class GalleryDetail extends React.Component {
   state = {
-    view: true,
+    upload: false,
+    view: false,
   }
 
-  openViewer = () => {
+  openViewer = (step) => () => {
+    this.props.store.gallery.step(step)
     this.setState({ view: true })
   }
 
@@ -26,9 +35,34 @@ class GalleryDetail extends React.Component {
     this.setState({ view: false })
   }
 
+  showUpload = () => {
+    this.setState({ upload: true })
+  }
+
+  hideUpload = () => {
+    this.setState({ upload: false })
+  }
+
   render() {
+    const { auth } = this.props.store
+    const uploadButton = auth.detail.ok
+      ? (
+        <Fab color="primary" onClick={this.showUpload} style={styles.add}>
+          <AddIcon />
+        </Fab>
+      ) : null
+    const imagesView = images.map((img, step) => (
+      <div
+        onClick={this.openViewer(step)}
+        style={{ ...styles.image, backgroundImage: `url("${img.imgPath}")` }}
+      />
+    ))
     return (
       <Template>
+        {uploadButton}
+        <div style={styles.grid}>
+          {imagesView}
+        </div>
         <PhotoViewer
           images={images}
           open={this.state.view}
@@ -40,4 +74,4 @@ class GalleryDetail extends React.Component {
 }
 
 
-export default GalleryDetail
+export default withStore(GalleryDetail)

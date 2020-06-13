@@ -4,6 +4,7 @@ import {
   Dialog,
   MobileStepper,
 } from '@material-ui/core'
+import { withStore } from 'freenit'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import SwipeableViews from 'react-swipeable-views'
@@ -11,23 +12,21 @@ import styles from './styles'
 
 
 class PhotoViewer extends React.Component {
-  state = {
-    step: 0,
-  }
-
   handleStep = (step) => {
-    this.setState({ step })
+    this.props.store.gallery.step(step)
   }
 
   prevPhoto = () => {
-    if (this.state.step > 0) {
-      this.setState({ step: this.state.step - 1 })
+    const { gallery } = this.props.store
+    if (gallery.detail.step > 0) {
+      gallery.step(gallery.detail.step - 1)
     }
   }
 
   nextPhoto = () => {
-    if (this.state.step < this.props.images.length - 1) {
-      this.setState({ step: this.state.step + 1 })
+    const { gallery } = this.props.store
+    if (gallery.detail.step < this.props.images.length - 1) {
+      gallery.step(gallery.detail.step + 1)
     }
   }
 
@@ -42,7 +41,7 @@ class PhotoViewer extends React.Component {
   }
 
   render() {
-    const { step } = this.state
+    const { step } = this.props.store.gallery.detail
     const { images } = this.props
     return (
       <Dialog
@@ -96,4 +95,4 @@ class PhotoViewer extends React.Component {
 }
 
 
-export default PhotoViewer
+export default withStore(PhotoViewer)

@@ -1,5 +1,6 @@
 export default {
   detail: {
+    step: 0,
   },
 
   list: {
