@@ -7,6 +7,7 @@ import AddIcon from '@material-ui/icons/Add'
 
 import Template from 'templates/default/detail'
 import PhotoViewer from 'components/photo-viewer'
+import UploadPhoto from 'components/upload-photo'
 
 import styles from './styles'
 
@@ -22,7 +23,7 @@ const images = [
 
 class GalleryDetail extends React.Component {
   state = {
-    upload: false,
+    upload: true,
     view: false,
   }
 
@@ -53,6 +54,7 @@ class GalleryDetail extends React.Component {
       ) : null
     const imagesView = images.map((img, step) => (
       <div
+        key={img.imgPath}
         onClick={this.openViewer(step)}
         style={{ ...styles.image, backgroundImage: `url("${img.imgPath}")` }}
       />
@@ -63,6 +65,7 @@ class GalleryDetail extends React.Component {
         <div style={styles.grid}>
           {imagesView}
         </div>
+        <UploadPhoto open={this.state.upload} onClose={this.hideUpload} />
         <PhotoViewer
           images={images}
           open={this.state.view}
