@@ -45,6 +45,7 @@ class GalleryDetail extends React.Component {
   }
 
   render() {
+    const { album } = this.props.match.params
     const { auth } = this.props.store
     const uploadButton = auth.detail.ok
       ? (
@@ -65,7 +66,11 @@ class GalleryDetail extends React.Component {
         <div style={styles.grid}>
           {imagesView}
         </div>
-        <UploadPhoto open={this.state.upload} onClose={this.hideUpload} />
+        <UploadPhoto
+          open={this.state.upload}
+          onClose={this.hideUpload}
+          target={`${window.rest.API_ROOT}/gallery/album/${album}`}
+        />
         <PhotoViewer
           images={images}
           open={this.state.view}

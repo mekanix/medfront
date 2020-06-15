@@ -16,7 +16,7 @@ import {
 import styles from './styles'
 
 
-class GalleryUpload extends React.Component {
+class UploadPhoto extends React.Component {
   state = {
     files: [],
     progress: 0,
@@ -158,7 +158,7 @@ class GalleryUpload extends React.Component {
 }
 
 
-GalleryUpload.propTypes = {
+UploadPhoto.propTypes = {
   onClose: PropTypes.func.isRequired,
   onSuccess: PropTypes.func,
   open: PropTypes.bool,
@@ -166,9 +166,9 @@ GalleryUpload.propTypes = {
 }
 
 
-GalleryUpload.defaultProps = {
+UploadPhoto.defaultProps = {
   open: false,
 }
 
 
-export default withStore(GalleryUpload)
+export default withStore(UploadPhoto)
