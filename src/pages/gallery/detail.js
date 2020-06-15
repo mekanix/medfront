@@ -23,7 +23,7 @@ const images = [
 
 class GalleryDetail extends React.Component {
   state = {
-    upload: true,
+    upload: false,
     view: false,
   }
 

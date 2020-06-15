@@ -83,7 +83,7 @@ class GalleryList extends React.Component {
     ))
     const createAlbum = auth.detail.ok
       ? (
-        <Fab color="primary" onClick={this.showCreateAlbum}>
+        <Fab color="primary" onClick={this.showCreateAlbum} style={styles.add}>
           <AddIcon />
         </Fab>
       ) : null

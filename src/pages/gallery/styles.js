@@ -50,6 +50,8 @@ export default {
   },
 
   add: {
-    marginBottom: 20,
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
   },
 }

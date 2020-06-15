@@ -7,7 +7,8 @@ ansible/site.yml
 !ansible/roles/devel
 build/
 cbsd.conf
-site.retry
-project.mk
-vars.mk
 node_modules
+project.mk
+site.retry
+vars.mk
+yarn-error.log
