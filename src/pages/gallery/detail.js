@@ -9,13 +9,13 @@ import Template from 'templates/default/detail'
 import PhotoViewer from 'components/photo-viewer'
 import UploadPhoto from 'components/upload-photo'
 
-import styles from './styles'
+import getStyles from './styles'
 
 
 class GalleryDetail extends React.Component {
   state = {
     upload: false,
-    view: false,
+    view: true,
   }
 
   constructor(props) {
@@ -49,10 +49,26 @@ class GalleryDetail extends React.Component {
     this.setState({ upload: false })
   }
 
+  addUploaded = (files) => {
+    const { gallery } = this.props.store
+    const data = [
+      ...gallery.detail.files.data,
+      ...files,
+    ]
+    gallery.setDetail({
+      ...gallery.detail,
+      files: {
+        ...gallery.detail.files,
+        data,
+      }
+    })
+  }
+
   render() {
     const { album } = this.props.match.params
-    const { auth, gallery } = this.props.store
+    const { auth, gallery, resolution } = this.props.store
     const { prefix, files } = gallery.detail
+    const styles = getStyles(resolution.detail)
     const uploadButton = auth.detail.ok
       ? (
         <Fab color="primary" onClick={this.showUpload} style={styles.add}>
@@ -82,6 +98,7 @@ class GalleryDetail extends React.Component {
         <UploadPhoto
           open={this.state.upload}
           onClose={this.hideUpload}
+          onSuccess={this.addUploaded}
           target={`${window.rest.API_ROOT}/gallery/album/${album}`}
         />
         <PhotoViewer

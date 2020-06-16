@@ -1,20 +1,24 @@
-export default {
-  root: {
-    maxWidth: 400,
-    flexGrow: 1,
-    position: 'relative',
-  },
+export default (resolution) => {
+  return {
+    img: {
+      display: 'block',
+    },
 
-  img: {
-    display: 'block',
-    height: 255,
-    maxWidth: 400,
-    overflow: 'hidden',
-    width: '100%',
-  },
+    dialog: {
+      height: 'calc(100vh - 150px)',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+    },
 
-  close: {
-    position: 'absolute',
-    zIndex: 1,
-  },
+    close: {
+      position: 'absolute',
+      zIndex: 1,
+    },
+
+    container: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: resolution.height - 150,
+    },
+  }
 }

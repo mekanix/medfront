@@ -8,7 +8,7 @@ import { withStore } from 'freenit'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import SwipeableViews from 'react-swipeable-views'
-import styles from './styles'
+import getStyles from './styles'
 
 
 class PhotoViewer extends React.Component {
@@ -41,54 +41,66 @@ class PhotoViewer extends React.Component {
   }
 
   render() {
-    const { step } = this.props.store.gallery.detail
+    const { gallery, resolution } = this.props.store
+    const { step } = gallery.detail
     const { images } = this.props
+    const styles = getStyles(resolution.detail)
     return (
       <Dialog
+        fullWidth
+        maxWidth={false}
         onClose={this.props.onClose}
         open={this.props.open}
         onKeyDown={this.handleKey}
         PaperProps={{ style: styles.dialog }}
       >
-          <div style={styles.root}>
-            <div
-              style={styles.close}
-              onClick={this.props.onClose}
-            >
-              x
-            </div>
-            <SwipeableViews
-              index={step}
-              onChangeIndex={this.handleStep}
-              enableMouseEvents
-            >
-              {images.map((image, index) => (
-                <div key={index}>
-                  {Math.abs(step - index) <= 2 ? (
-                    <img style={styles.img} src={image.src} alt={image.label} />
-                  ) : null}
-                </div>
-              ))}
-            </SwipeableViews>
-            <MobileStepper
-              steps={images.length}
-              position="static"
-              variant="text"
-              activeStep={step}
-              nextButton={
-                <Button size="small" onClick={this.nextPhoto} disabled={step === images.length - 1}>
-                  Next
-                  <KeyboardArrowRight />
-                </Button>
-              }
-              backButton={
-                <Button size="small" onClick={this.prevPhoto} disabled={step === 0}>
-                  <KeyboardArrowLeft />
-                  Back
-                </Button>
-              }
-            />
+          <div
+            style={styles.close}
+            onClick={this.props.onClose}
+          >
+            x
           </div>
+          <SwipeableViews
+            index={step}
+            onChangeIndex={this.handleStep}
+            enableMouseEvents
+          >
+            {images.map((image, index) => (
+              <div style={styles.container}>
+                <img
+                  key={image.src}
+                  src={image.src}
+                  style={styles.img}
+                  alt={image.label}
+                />
+              </div>
+            ))}
+          </SwipeableViews>
+          <MobileStepper
+            steps={images.length}
+            variant="text"
+            activeStep={step}
+            nextButton={
+              <Button
+                size="small"
+                onClick={this.nextPhoto}
+                disabled={step === images.length - 1}
+              >
+                Next
+                <KeyboardArrowRight />
+              </Button>
+            }
+            backButton={
+              <Button
+                size="small"
+                onClick={this.prevPhoto}
+                disabled={step === 0}
+              >
+                <KeyboardArrowLeft />
+                Back
+              </Button>
+            }
+          />
       </Dialog>
     )
   }

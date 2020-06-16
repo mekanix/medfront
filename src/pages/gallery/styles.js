@@ -1,62 +1,65 @@
-export default {
-  root: {
-    maxWidth: 400,
-    flexGrow: 1,
-  },
+export default (resolution) => {
+  const count = Math.ceil(resolution.width / 350)
+  return {
+    root: {
+      maxWidth: 400,
+      flexGrow: 1,
+    },
 
-  content: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, auto)",
-    columnGap: 10,
-    rowGap: 10,
-    marginTop: 20,
-  },
+    content: {
+      display: "grid",
+      gridTemplateColumns: `repeat(${count}, auto)`,
+      columnGap: 10,
+      rowGap: 10,
+      marginTop: 20,
+    },
 
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-    height: 50,
-  },
+    header: {
+      display: 'flex',
+      alignItems: 'center',
+      height: 50,
+    },
 
-  img: {
-    height: 255,
-    display: 'block',
-    maxWidth: 400,
-    overflow: 'hidden',
-    width: '100%',
-  },
+    img: {
+      height: 255,
+      display: 'block',
+      maxWidth: 400,
+      overflow: 'hidden',
+      width: '100%',
+    },
 
-  album: {
-    height: 140,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-  },
+    album: {
+      height: 140,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100% 100%',
+    },
 
-  title: {
-    flex: 1,
-  },
+    title: {
+      flex: 1,
+    },
 
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, auto)',
-    gridGap: 10,
-  },
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: `repeat(${count}, auto)`,
+      gridGap: 10,
+    },
 
-  image: {
-    height: 200,
-    width: '100%',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-  },
+    image: {
+      height: 200,
+      width: '100%',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100% 100%',
+    },
 
-  add: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-  },
+    add: {
+      position: 'absolute',
+      bottom: 20,
+      right: 20,
+    },
 
-  picture: {
-    width: 1.6,
-    height: 1,
-  },
+    picture: {
+      width: 1.6,
+      height: 1,
+    },
+  }
 }

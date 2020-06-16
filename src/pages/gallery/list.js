@@ -17,7 +17,7 @@ import { withStore } from 'freenit'
 import AddIcon from '@material-ui/icons/Add'
 import { Link } from 'react-router-dom'
 import Template from 'templates/default/detail'
-import styles from './styles'
+import getStyles from './styles'
 
 
 class GalleryList extends React.Component {
@@ -63,7 +63,8 @@ class GalleryList extends React.Component {
   }
 
   render() {
-    const { auth, gallery } = this.props.store
+    const { auth, gallery, resolution } = this.props.store
+    const styles = getStyles(resolution.detail)
     const albumsView = gallery.list.data.map(album => (
       <Link to={`/gallery/${album.name}`} key={album.name}>
         <Card raised>

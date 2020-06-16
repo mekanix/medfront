@@ -6,7 +6,7 @@ import { withStore, EmptyTemplate } from 'freenit'
 // Components
 import {
   AppBar,
-  // Button,
+  Button,
   Drawer,
   IconButton,
   ListItemIcon,
@@ -18,10 +18,11 @@ import {
 // Icons
 import CloseIcon from '@material-ui/icons/Clear'
 import DashboardIcon from '@material-ui/icons/Dashboard'
+import GalleryIcon from '@material-ui/icons/LinkedCamera'
 import LoginIcon from '@material-ui/icons/Input'
 import LogoutIcon from '@material-ui/icons/PowerSettingsNew'
-import ProfileIcon from '@material-ui/icons/AccountCircle'
 import MenuIcon from '@material-ui/icons/Menu'
+import ProfileIcon from '@material-ui/icons/AccountCircle'
 import RoleIcon from '@material-ui/icons/People'
 import UserIcon from '@material-ui/icons/PeopleOutline'
 
@@ -130,6 +131,18 @@ class Template extends React.Component {
         ...AdminMenu,
       ]
       : null
+    const PublicMenu = [
+      (
+        <Link to="/gallery" key="gallery">
+          <MenuItem>
+            <ListItemIcon>
+              <GalleryIcon />
+            </ListItemIcon>
+            Galerija
+          </MenuItem>
+        </Link>
+      ),
+    ]
     const BarLinks = resolution.detail.width > 410
       ? (
         <div>
@@ -148,11 +161,9 @@ class Template extends React.Component {
                 Gospodarstvo Grbić
               </Link>
             </Typography>
-            {/*
             <Link to="/gallery">
               <Button color="inherit">Galerija</Button>
             </Link>
-            */}
             {BarLinks}
           </Toolbar>
         </AppBar>
@@ -177,6 +188,7 @@ class Template extends React.Component {
               onKeyDown={this.handleMenuClose}
             >
               {AuthMenu}
+              {PublicMenu}
               {LoggingMenu}
             </div>
           </Drawer>

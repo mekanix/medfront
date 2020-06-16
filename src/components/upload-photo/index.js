@@ -83,7 +83,7 @@ class UploadPhoto extends React.Component {
             src: file.data,
             height: 500,
             width: 500,
-            name: file.file.name,
+            filename: file.file.name,
           }))
           notification.show('Files uploaded')
           this.setState({ files: [] })
