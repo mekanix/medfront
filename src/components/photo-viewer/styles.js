@@ -2,6 +2,8 @@ export default (resolution) => {
   return {
     img: {
       display: 'block',
+      maxWidth: '100vw',
+      maxHeight: 'calc(100vh - 150px)',
     },
 
     dialog: {
