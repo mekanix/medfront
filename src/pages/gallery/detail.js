@@ -12,19 +12,24 @@ import UploadPhoto from 'components/upload-photo'
 import styles from './styles'
 
 
-const images = [
-  { imgPath: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60' },
-  { imgPath: 'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60' },
-  { imgPath: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80' },
-  { imgPath: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60' },
-  { imgPath: 'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60' },
-]
-
-
 class GalleryDetail extends React.Component {
   state = {
     upload: false,
     view: false,
+  }
+
+  constructor(props) {
+    super(props)
+    this.fetch()
+  }
+
+  fetch = async () => {
+    const { album } = this.props.match.params
+    const { gallery, notification } = this.props.store
+    const response = await gallery.fetch(album)
+    if (!response.ok) {
+      notification.show('Failed fetching images')
+    }
   }
 
   openViewer = (step) => () => {
@@ -46,18 +51,26 @@ class GalleryDetail extends React.Component {
 
   render() {
     const { album } = this.props.match.params
-    const { auth } = this.props.store
+    const { auth, gallery } = this.props.store
+    const { prefix, files } = gallery.detail
     const uploadButton = auth.detail.ok
       ? (
         <Fab color="primary" onClick={this.showUpload} style={styles.add}>
           <AddIcon />
         </Fab>
       ) : null
+    const images = files.data.map(picture => ({
+      src: picture.src
+        ? picture.src
+        : `${prefix}/${album}/${picture.filename}`,
+      height: styles.picture.height,
+      width: styles.picture.width,
+    }))
     const imagesView = images.map((img, step) => (
       <div
-        key={img.imgPath}
+        key={img.src}
         onClick={this.openViewer(step)}
-        style={{ ...styles.image, backgroundImage: `url("${img.imgPath}")` }}
+        style={{ ...styles.image, backgroundImage: `url("${img.src}")` }}
       />
     ))
     return (

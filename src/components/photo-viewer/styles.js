@@ -6,15 +6,11 @@ export default {
   },
 
   img: {
-    height: 255,
     display: 'block',
+    height: 255,
     maxWidth: 400,
     overflow: 'hidden',
     width: '100%',
-  },
-
-  dialog: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
 
   close: {

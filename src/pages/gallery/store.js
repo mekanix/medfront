@@ -8,7 +8,7 @@ export default class GalleryStore {
 
   fetch = async (name) => {
     try {
-      const response = await window.rest.get(`/gallery/${name}`)
+      const response = await window.rest.get(`/gallery/album/${name}`)
       const result = {
         ...response.data,
         ok: true

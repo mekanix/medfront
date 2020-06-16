@@ -54,4 +54,9 @@ export default {
     bottom: 20,
     right: 20,
   },
+
+  picture: {
+    width: 1.6,
+    height: 1,
+  },
 }

@@ -65,7 +65,7 @@ class PhotoViewer extends React.Component {
               {images.map((image, index) => (
                 <div key={index}>
                   {Math.abs(step - index) <= 2 ? (
-                    <img style={styles.img} src={image.imgPath} alt={image.label} />
+                    <img style={styles.img} src={image.src} alt={image.label} />
                   ) : null}
                 </div>
               ))}

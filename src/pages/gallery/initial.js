@@ -1,5 +1,10 @@
 export default {
   detail: {
+    files: {
+      data: [],
+      page: 0,
+      total: 0,
+    },
     step: 0,
   },
 
