@@ -29,9 +29,14 @@ export default (resolution) => {
     },
 
     album: {
-      height: 140,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% 100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      icon: {
+        height: 140,
+        width: 140,
+        color: 'gray',
+      },
     },
 
     title: {
@@ -52,9 +57,10 @@ export default (resolution) => {
     },
 
     add: {
-      position: 'absolute',
+      position: 'fixed',
       bottom: 20,
       right: 20,
+      zIndex: 10,
     },
 
     picture: {

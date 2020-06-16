@@ -44,18 +44,20 @@ export default class GalleryStore {
   create = async (data) => {
     try {
       const response = await window.rest.post(`/gallery`, data)
-      this.setList({
+      const result = {
         ...this.list,
         data: [
           ...this.list.data,
-          ...response.data,
+          response.data,
         ],
-      })
+      }
+      this.setList(result)
       return {
-        ...response.data,
-        ok: true
+        ...result,
+        ok: true,
       }
     } catch (error) {
+      console.log(error)
       return {
         ...error,
         ok: false,

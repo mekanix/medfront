@@ -1,9 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Button,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
   Dialog,
   DialogActions,
@@ -14,8 +14,9 @@ import {
   Typography,
 } from '@material-ui/core'
 import { withStore } from 'freenit'
+
 import AddIcon from '@material-ui/icons/Add'
-import { Link } from 'react-router-dom'
+import AlbumIcon from '@material-ui/icons/LinkedCamera'
 import Template from 'templates/default/detail'
 import getStyles from './styles'
 
@@ -53,7 +54,6 @@ class GalleryList extends React.Component {
     if (!response.ok) {
       notification.show('Error creating album')
     }
-    console.log('here')
     this.closeCreateAlbum()
     this.setState({ name: '' })
   }
@@ -68,17 +68,14 @@ class GalleryList extends React.Component {
     const albumsView = gallery.list.data.map(album => (
       <Link to={`/gallery/${album.name}`} key={album.name}>
         <Card raised>
-          <CardActionArea>
-            <CardMedia
-              image="https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
-              style={styles.album}
-            />
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                {album.name}
-              </Typography>
-            </CardContent>
+          <CardActionArea style={styles.album}>
+            <AlbumIcon style={styles.album.icon} />
           </CardActionArea>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>
+              {album.name}
+            </Typography>
+          </CardContent>
         </Card>
       </Link>
     ))

@@ -15,7 +15,7 @@ import getStyles from './styles'
 class GalleryDetail extends React.Component {
   state = {
     upload: false,
-    view: true,
+    view: false,
   }
 
   constructor(props) {
