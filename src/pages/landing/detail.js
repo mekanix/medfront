@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Avatar,
   Card,
@@ -37,16 +38,18 @@ class Landing extends React.Component {
             Proizvodi
           </div>
           <div style={styles.cards}>
-            <Card style={styles.card}>
-              <CardHeader
-                title="Med"
-                subheader="livadski, bagremov, prirodni, vrcani ..."
-              />
-              <CardMedia
-                image="https://as2.ftcdn.net/jpg/01/40/91/57/500_F_140915723_DPQA5uFOB4K23w0ljgcE8P0e4jSVIt1M.jpg"
-                style={styles.media}
-              />
-            </Card>
+            <Link to="/proizvod/med" style={styles.card}>
+              <Card>
+                <CardHeader
+                  title="Med"
+                  subheader="livadski, bagremov, prirodni, vrcani ..."
+                />
+                <CardMedia
+                  image="https://as2.ftcdn.net/jpg/01/40/91/57/500_F_140915723_DPQA5uFOB4K23w0ljgcE8P0e4jSVIt1M.jpg"
+                  style={styles.media}
+                />
+              </Card>
+            </Link>
             <Card style={styles.card}>
               <CardHeader
                 title="Matična mleč"
