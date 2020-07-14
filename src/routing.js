@@ -11,6 +11,7 @@ import {
 import Dashboard from 'pages/dashboard'
 import Gallery from 'pages/gallery'
 import Landing from 'pages/landing'
+import Product from 'pages/product'
 import Role from 'pages/role'
 import User from 'pages/user'
 
@@ -29,6 +30,7 @@ const Routing = () => {
       <Route exact path="/gallery" component={Gallery.list} />
       <Route exact path="/gallery/:album" component={Gallery.detail} />
       <Route exact path="/login" component={Auth.login} />
+      <Route exact path="/proizvod/med" component={Product.detail} />
       <Route exact path="/profile" component={Profile.detail} />
       <Route exact path="/register" component={Auth.register} />
       <Route exact path="/reset" component={Auth.reset} />
