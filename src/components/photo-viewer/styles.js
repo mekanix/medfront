@@ -7,7 +7,7 @@ export default (resolution) => {
     },
 
     dialog: {
-      height: 'calc(100vh - 150px)',
+      maxHeight: 'calc(100vh - 150px)',
       backgroundColor: 'rgba(0, 0, 0, 0)',
     },
 

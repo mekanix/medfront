@@ -66,9 +66,8 @@ class PhotoViewer extends React.Component {
             enableMouseEvents
           >
             {images.map((image, index) => (
-              <div style={styles.container}>
+              <div style={styles.container} key={image.src}>
                 <img
-                  key={image.src}
                   src={image.src}
                   style={styles.img}
                   alt={image.label}
@@ -78,7 +77,7 @@ class PhotoViewer extends React.Component {
           </SwipeableViews>
           <MobileStepper
             steps={images.length}
-            variant="text"
+            variant="progress"
             activeStep={step}
             nextButton={
               <Button
