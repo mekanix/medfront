@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Button,
   Dialog,
+  Fab,
   MobileStepper,
 } from '@material-ui/core'
 import { withStore } from 'freenit'
@@ -54,25 +55,20 @@ class PhotoViewer extends React.Component {
         onKeyDown={this.handleKey}
         PaperProps={{ style: styles.dialog }}
       >
-          <div
+          <Fab
             style={styles.close}
             onClick={this.props.onClose}
           >
             x
-          </div>
+          </Fab>
           <SwipeableViews
             index={step}
             onChangeIndex={this.handleStep}
             enableMouseEvents
           >
             {images.map((image, index) => (
-              <div style={styles.container}>
-                <img
-                  key={image.src}
-                  src={image.src}
-                  style={styles.img}
-                  alt={image.label}
-                />
+              <div style={styles.container} key={image.src}>
+                <img src={image.src} style={styles.img} alt={image.label} />
               </div>
             ))}
           </SwipeableViews>

@@ -14,6 +14,11 @@ export default (resolution) => {
     close: {
       position: 'absolute',
       zIndex: 1,
+      fontSize: '48px',
+      color: '#aaa',
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      top: 0,
+      left: 0,
     },
 
     container: {
