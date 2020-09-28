@@ -74,7 +74,7 @@ class PhotoViewer extends React.Component {
           </SwipeableViews>
           <MobileStepper
             steps={images.length}
-            variant="text"
+            variant="progress"
             activeStep={step}
             nextButton={
               <Button
