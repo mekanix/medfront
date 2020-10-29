@@ -4,10 +4,13 @@ import initial from './initial'
 import { User } from 'freenit'
 
 
-export default {
+const user = {
   detail,
   initial,
   list,
   service: User.service,
   store: User.store,
 }
+
+
+export default user

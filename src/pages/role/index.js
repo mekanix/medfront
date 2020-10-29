@@ -2,7 +2,10 @@ import detail from './detail'
 import list from './list'
 
 
-export default {
+const role ={
   detail,
   list,
 }
+
+
+export default role

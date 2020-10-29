@@ -7,9 +7,10 @@ import Template from 'templates/default/detail'
 
 class RoleDetail extends React.Component {
   render() {
+    const Detail = Role.detal
     return (
       <Template secure style={{}}>
-        <Role.detail {...this.props} />
+        <Detail {...this.props} />
       </Template>
     )
   }

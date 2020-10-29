@@ -1,4 +1,4 @@
-export default {
+const service = {
   assign: async (role, id) => {
     const response = await window.rest.post(`/roles/${role}/user`, { id })
     return response.data
@@ -34,3 +34,6 @@ export default {
     return response.data
   },
 }
+
+
+export default service

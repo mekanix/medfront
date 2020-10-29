@@ -7,9 +7,10 @@ import Template from 'templates/default/detail'
 
 class UserDetail extends React.Component {
   render() {
+    const Detail = User.detail
     return (
       <Template secure style={{}}>
-        <User.detail {...this.props} />
+        <Detail {...this.props} />
       </Template>
     )
   }

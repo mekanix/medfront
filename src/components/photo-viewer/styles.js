@@ -1,4 +1,4 @@
-export default (resolution) => {
+const getStyles = (resolution) => {
   return {
     img: {
       display: 'block',
@@ -15,7 +15,7 @@ export default (resolution) => {
       position: 'absolute',
       zIndex: 1,
       fontSize: '48px',
-      color: '#aaa',
+      color: '#bbb',
       backgroundColor: 'rgba(255, 255, 255, 0.2)',
       top: 0,
       left: 0,
@@ -29,3 +29,6 @@ export default (resolution) => {
     },
   }
 }
+
+
+export default getStyles

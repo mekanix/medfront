@@ -7,9 +7,10 @@ import Template from 'templates/default/detail'
 
 class UserList extends React.Component {
   render() {
+    const List = User.list
     return (
       <Template secure style={{}}>
-        <User.list {...this.props} />
+        <List {...this.props} />
       </Template>
     )
   }

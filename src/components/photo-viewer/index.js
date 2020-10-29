@@ -53,7 +53,7 @@ class PhotoViewer extends React.Component {
         onClose={this.props.onClose}
         open={this.props.open}
         onKeyDown={this.handleKey}
-        PaperProps={{ style: styles.dialog }}
+        PaperProps={{ style: styles.dialog, onClick: this.props.onClose }}
       >
           <Fab
             style={styles.close}

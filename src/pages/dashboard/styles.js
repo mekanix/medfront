@@ -5,7 +5,7 @@ const center = {
 }
 
 
-export default {
+const style = {
   root: {
     ...center,
     flexDirection: 'column',
@@ -29,3 +29,6 @@ export default {
     margin: 20,
   },
 }
+
+
+export default style

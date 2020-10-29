@@ -1,4 +1,4 @@
-export default {
+const initial = {
   detail: {
     files: {
       data: [],
@@ -14,3 +14,6 @@ export default {
     total: 0,
   },
 }
+
+
+export default initial

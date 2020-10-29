@@ -7,9 +7,10 @@ import Template from 'templates/default/detail'
 
 class RoleList extends React.Component {
   render() {
+    const List = Role.list
     return (
       <Template secure style={{}}>
-        <Role.list {...this.props} />
+        <List {...this.props} />
       </Template>
     )
   }

@@ -4,9 +4,12 @@ import list from './list'
 import store from './store'
 
 
-export default {
+const gallery = {
   detail,
   initial,
   list,
   store,
 }
+
+
+export default gallery

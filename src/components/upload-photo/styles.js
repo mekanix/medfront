@@ -1,4 +1,4 @@
-export default {
+const styles = {
   root: {
     height: 500,
     width: 500,
@@ -13,3 +13,6 @@ export default {
     width: 100,
   },
 }
+
+
+export default styles

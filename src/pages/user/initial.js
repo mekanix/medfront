@@ -1,4 +1,4 @@
-export default {
+const initial = {
   detail: {
     biography: '',
     email: '',
@@ -13,3 +13,6 @@ export default {
     total: 0,
   },
 }
+
+
+export default initial

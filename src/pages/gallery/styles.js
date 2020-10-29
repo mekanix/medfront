@@ -1,4 +1,4 @@
-export default (resolution) => {
+const getStyles = (resolution) => {
   const count = Math.ceil(resolution.width / 350)
   return {
     root: {
@@ -69,3 +69,6 @@ export default (resolution) => {
     },
   }
 }
+
+
+export default getStyles

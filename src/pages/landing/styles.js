@@ -5,7 +5,7 @@ const center = {
 }
 
 
-export default (resolution) => {
+const getStyles = (resolution) => {
   return {
     root: {
       ...center,
@@ -165,3 +165,6 @@ export default (resolution) => {
     },
   }
 }
+
+
+export default getStyles

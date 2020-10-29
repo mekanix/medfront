@@ -51,6 +51,7 @@ class Template extends React.Component {
   }
 
   render() {
+    const Template = EmptyTemplate.detail
     const { auth, profile, resolution } = this.props.store
     const AnonButton = (
       <Link to="/login" style={styles.login}>
@@ -167,7 +168,7 @@ class Template extends React.Component {
             {BarLinks}
           </Toolbar>
         </AppBar>
-        <EmptyTemplate.detail secure={this.props.secure} style={this.props.style}>
+        <Template secure={this.props.secure} style={this.props.style}>
           {this.props.children}
           <Drawer open={this.state.showMenu} onClose={this.handleMenuClose}>
             <AppBar position="static">
@@ -192,7 +193,7 @@ class Template extends React.Component {
               {LoggingMenu}
             </div>
           </Drawer>
-        </EmptyTemplate.detail>
+        </Template>
       </div>
     )
   }
