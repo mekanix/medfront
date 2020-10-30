@@ -1,10 +1,10 @@
-import detail from './detail'
-import list from './list'
+import Detail from './detail'
+import List from './list'
 
 
 const role ={
-  detail,
-  list,
+  Detail,
+  List,
 }
 
 

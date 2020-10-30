@@ -1,8 +1,8 @@
-import detail from './detail'
+import Detail from './detail'
 
 
 const dashboard = {
-  detail,
+  Detail,
 }
 
 

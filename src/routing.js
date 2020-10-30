@@ -24,24 +24,24 @@ window.rest.API_ROOT = API_ROOT
 const Routing = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Landing.detail} />
-      <Route exact path="/confirm/:token" component={Auth.confirm} />
-      <Route exact path="/dashboard" component={Dashboard.detail} />
-      <Route exact path="/gallery" component={Gallery.list} />
-      <Route exact path="/gallery/:album" component={Gallery.detail} />
-      <Route exact path="/login" component={Auth.login} />
-      <Route exact path="/proizvod/med" component={Product.detail} />
-      <Route exact path="/profile" component={Profile.detail} />
-      <Route exact path="/register" component={Auth.register} />
-      <Route exact path="/reset" component={Auth.reset} />
-      <Route exact path="/reset/:token" component={Auth.changePassword} />
-      <Route exact path="/role/:id" component={Role.detail} />
-      <Route exact path="/roles" component={Role.list} />
-      <Route exact path="/roles/:page" component={Role.list} />
-      <Route exact path="/user/:id" component={User.detail} />
-      <Route exact path="/users" component={User.list} />
-      <Route exact path="/users/:page" component={User.list} />
-      <Route path="*" component={NoPage.detail} />
+      <Route exact path="/" component={Landing.Detail} />
+      <Route exact path="/confirm/:token" component={Auth.Confirm} />
+      <Route exact path="/dashboard" component={Dashboard.Detail} />
+      <Route exact path="/gallery" component={Gallery.List} />
+      <Route exact path="/gallery/:album" component={Gallery.Detail} />
+      <Route exact path="/login" component={Auth.Login} />
+      <Route exact path="/proizvod/med" component={Product.Detail} />
+      <Route exact path="/profile" component={Profile.Detail} />
+      <Route exact path="/register" component={Auth.Register} />
+      <Route exact path="/reset" component={Auth.Reset} />
+      <Route exact path="/reset/:token" component={Auth.ChangePassword} />
+      <Route exact path="/role/:id" component={Role.Detail} />
+      <Route exact path="/roles" component={Role.List} />
+      <Route exact path="/roles/:page" component={Role.List} />
+      <Route exact path="/user/:id" component={User.Detail} />
+      <Route exact path="/users" component={User.List} />
+      <Route exact path="/users/:page" component={User.List} />
+      <Route path="*" component={NoPage.Detail} />
     </Switch>
   )
 }

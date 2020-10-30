@@ -5338,10 +5338,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-freenit@^0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/freenit/-/freenit-0.0.26.tgz#e1d0c7d4d8bb54f48e61e886be76667d0fd7bf0a"
-  integrity sha512-RIsoHZ9q6t4nnKxRHdKbTdXxCcZYonujv9fWJze5eW2Gbp8jbb2UblPRseYF7ljzvCRVmodDcArbOvokXGdT1Q==
+freenit@^0.0.27:
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/freenit/-/freenit-0.0.27.tgz#f236bac80af542c8ef56803ab3dced7f0108c94a"
+  integrity sha512-CV5V/GRItvjKfoVyA3giO8FLK0SJ2TpqNGDqGcM+HUZC0fi392j5Xeg8uLl0m3c61Cmr2Qkw0IDKQCFNpt4bAQ==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"
