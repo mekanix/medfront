@@ -76,35 +76,23 @@ class Landing extends React.Component {
           </div>
         </div>
         <div style={styles.boro}>
-          <div style={styles.boro.title}>Pčelar</div>
+          <div style={styles.boro.title}>Od ideje do 120 košnica</div>
           <div style={styles.boro.content}>
             <Avatar variant="rounded" style={styles.boro.avatar} />
             <div style={styles.boro.info}>
               <p>
-                Ratione vero beatae dolorem ipsam. Voluptas itaque mollitia
-                perferendis sint culpa. Eius fuga praesentium voluptatem ipsum
-                dolore at dolor.
-              </p>
-              <p>
-                Quisquam quasi non illum natus. Laudantium eum maiores
-                repellendus porro recusandae inventore quo voluptates. Eaque
-                expedita illum expedita consectetur et sit.
-              </p>
-              <p>
-                Odit nemo quis error molestiae enim dolorem sint. Perferendis
-                laboriosam earum debitis soluta nobis temporibus in. Recusandae
-                et deleniti quo recusandae.
-              </p>
-              <p>
-                Praesentium fuga rerum eos. Eveniet maxime non enim omnis
-                tenetur. Esse non labore dolor. Et vel facere commodi minima
-                quibusdam rem corporis. Sunt error est quo id necessitatibus
-                quam molestiae consectetur.
-              </p>
-              <p>
-                Ut libero quis atque. Minus quis architecto cupiditate ratione
-                blanditiis. Praesentium suscipit omnis quos sed. Impedit rerum
-                placeat omnis dignissimos laboriosam.
+                Sadnja 70 voćaka  pokrenula je ideju o nekoliko košnica za
+                oprašivanje. Hobistički. Nekoliko, pretvorilo se u više od 120
+                tijekom 17 godina. Otvaranje OPG-a normalan je slijed. 2005
+                godine stiglo je rješenje i pod brojem 000155993 upisan sam u
+                upisnik regstrovanih poljoprivrednih gospodarstava. 2009 godine
+                registrirao sam objekat za punjenje i pakovanje pčelinjih
+                proizvoda na obiteljskom poljoprivrednom gospodarstvu.
+                Pčelarenje polako postaje zanimanje pretvara se u zanat.
+                Povećanjem broja košnica povećava se i interes za proizvodnjom
+                matica pčela. 2006 godine postajem član udruge uzgajivača
+                matica pčela hrvatske. Danas, sa 400 oplodnjaka proizvedem
+                900-1000 selekcioniranih matica pčela.
               </p>
             </div>
           </div>
